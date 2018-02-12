@@ -3,6 +3,7 @@
 
 package openfoodfacts
 
+// ProductResult is the response from a query against the OpenFoodFacts database.
 type ProductResult struct {
 	StatusVerbose string   `json:"status_verbose"`
 	Status        int      `json:"status"`

@@ -15,6 +15,7 @@ type EpochTime struct {
 	time.Time
 }
 
+// UnmarshalJSON implements encoding/json.Unmarshaler.
 func (t *EpochTime) UnmarshalJSON(b []byte) (err error) {
 	s := strings.Trim(string(b), "\"")
 	if s == "null" {
@@ -32,6 +33,7 @@ func (t *EpochTime) UnmarshalJSON(b []byte) (err error) {
 	return nil
 }
 
+// MarshalJSON implements encoding/json.Marshaler.
 func (t *EpochTime) MarshalJSON() ([]byte, error) {
 	if !t.IsSet() {
 		return []byte("null"), nil

@@ -3,6 +3,7 @@
 
 package openfoodfacts
 
+// NutrientLevel stores the amount of nutrients in a Product.
 type NutrientLevel struct {
 	Sugars       string `json:"sugars"`
 	SaturatedFat string `json:"saturated-fat"`

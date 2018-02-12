@@ -3,6 +3,7 @@
 
 package openfoodfacts
 
+// Ingredient lists informations about a Product's ingredient.
 type Ingredient struct {
 	ID   string `json:"id"`
 	Rank int    `json:"rank,omitempty"`

@@ -14,6 +14,7 @@ type URL struct {
 	url.URL
 }
 
+// UnmarshalJSON implements encoding/json.Unmarshaler.
 func (u *URL) UnmarshalJSON(b []byte) error {
 	s := strings.Trim(string(b), "\"")
 	if s == "null" {
@@ -29,6 +30,7 @@ func (u *URL) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+// MarshalJSON implements encoding/json.Marshaler.
 func (u *URL) MarshalJSON() ([]byte, error) {
 	return []byte(fmt.Sprintf("%q", u.URL.String())), nil
 }

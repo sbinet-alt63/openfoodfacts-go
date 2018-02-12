@@ -1,10 +1,11 @@
 // Copyright © 2016 OpenFoodFacts. All rights reserved.
 // Use of this source code is governed by the MIT license which can be found in the LICENSE.txt file.
 
-// This is a go library used to access the OpenFoodFacts.org database for food product, ingredients and
-// nutritional data from within your go application.
+// Package openfoodfacts enables access to the OpenFoodFacts.org database for
+// food product, ingredients and nutritional data retrieval from within your
+// go application.
 //
-// The main method of using this library is to create a DataOperator and call methods on it.
+// The main method of using this library is to create a Client and call methods on it.
 package openfoodfacts
 
 import (
@@ -96,11 +97,9 @@ func (h *Client) Product(code string) (*Product, error) {
 			if b > n {
 				b = n
 			}
-			err = errors.New(
-				fmt.Sprintf("%s at:\n  %s⚠️ %s",
-					string(err.Error()),
-					string(body[a:offs]), string(body[offs:b]),
-				),
+			err = fmt.Errorf("%v at:\n  %s⚠️ %s",
+				err,
+				string(body[a:offs]), string(body[offs:b]),
 			)
 		}
 

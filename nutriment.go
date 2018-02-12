@@ -5,6 +5,7 @@ package openfoodfacts
 
 import "encoding/json"
 
+// Nutriment stores informations about a Product's nutriments.
 type Nutriment struct {
 	Carbohydrates        json.Number `json:"carbohydrates"`
 	Carbohydrates100G    json.Number `json:"carbohydrates_100g"`

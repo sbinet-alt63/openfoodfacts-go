@@ -5,8 +5,9 @@ package openfoodfacts
 
 import "encoding/json"
 
+// Product stores informations about a product in the OpenFoodFacts database.
 type Product struct {
-	Id                                          string         `json:"id"`
+	ID                                          string         `json:"id"`
 	Code                                        string         `json:"code"`
 	Brands                                      string         `json:"brands"`
 	BrandsTags                                  []string       `json:"brands_tags"`
@@ -106,7 +107,7 @@ type Product struct {
 	LanguagesHierarchy                          []string       `json:"languages_hierarchy"`
 	LanguagesTags                               []string       `json:"languages_tags"`
 	Locale                                      string         `json:"lc"`
-	MaxImgId                                    string         `json:"max_imgid"`
+	MaxImgID                                    string         `json:"max_imgid"`
 	NewAdditivesNumber                          int            `json:"new_additives_n"`
 	NoNutritionData                             interface{}    `json:"no_nutrition_data"`
 	NutrientLevels                              NutrientLevel  `json:"nutrient_levels"`
